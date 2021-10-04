@@ -1,5 +1,8 @@
 <script>
 	export let segment;
+	// export const elements = [
+	// 	{endpoint: 'enkoder', label: 'Enkoder' },
+	// ]
 </script>
 
 <style>
@@ -50,11 +53,13 @@
 
 <nav>
 	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
-
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
+		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
+		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About us</a></li>
+		<!-- {#each elements as element}
+			<li>
+				<a aria-current="{segment === element.endpoint ? 'page' : undefined}" href='{element.endpoint}'>{element.label}</a>
+			</li>
+		{/each} -->
 		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
 	</ul>
 </nav>
